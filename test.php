@@ -22,7 +22,7 @@ echo fnXOR();
 
 function fnXOR()
 {
- return  (1 and 1) xor (1 and 0);
+ return  (1 and 1) xor (1 and 1);
 } 
 //phpinfo();
 echo array_shift(explode("." ,(array_pop(explode("/", __FILE__)))));
