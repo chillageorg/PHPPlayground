@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:tns="http://localhost:8888/playground/admazing" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns="http://schemas.xmlsoap.org/wsdl/" 
+targetNamespace="http://localhost:8888/playground/admazing">
+<types><xsd:schema targetNamespace="localhost:8888/playground/admazing/">
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="getShareRecordsRequest">	
+</message>
+<message name="getShareRecordsResponse">
+	<part name="arrayRecord" type="xsd:array" />
+</message>
+<portType name="SharesServicePortType">
+	<operation name="getShareRecords">
+		<input message="tns:getShareRecordsRequest"/>
+		<output message="tns:getShareRecordsResponse"/>
+	</operation>
+</portType>
+<binding name="SharesServiceBinding" type="tns:SharesServicePortType">
+	<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+	<operation name="getShareRecords">
+		<soap:operation soapAction="http://localhost:8888/playground/admazing/soapservice.php/getShareRecords" style="rpc"/>
+		<input>
+			<soap:body use="encoded" namespace="http://soapinterop.org/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		</input>
+		<output>
+			<soap:body use="encoded" namespace="http://soapinterop.org/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		</output>
+	</operation>
+</binding>
+<service name="SharesService">
+	<port name="SharesServicePort" binding="tns:SharesServiceBinding">
+	<soap:address location="http://localhost:8888/playground/admazing/soapservice.php"/></port>
+</service>
+</definitions>
