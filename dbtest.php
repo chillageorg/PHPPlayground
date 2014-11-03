@@ -1,12 +1,8 @@
 <?php
 
+include_once 'config.ini';
 
-define("DBServer", "localhost");
-define("DBServerPW", "test");
-define("DBServerUser", "root");
-define("DBInternal", "playground");
-
-$mysqli = new mysqli(DBServer, DBServerUser, DBServerPW,DBInternal);
+$mysqli = new mysqli(DBServeri, DBServerUser, DBServerPW,DBInternal);
 if ($mysqli->connect_error) {
 	die('Connect Error (' . $mysqli->connect_errno . ') '
 	. $mysqli->connect_error);

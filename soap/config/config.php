@@ -1,5 +1,6 @@
 <?php
-define("DBServer", "localhost");
+//define("DBServer", "localhost");
+define("DBServer", ":/Applications/MAMP/tmp/mysql/mysql.sock");
 define("DBServerPW", "test");
 define("DBServerUser", "root");
 define("DBExternal", "sharescompany");

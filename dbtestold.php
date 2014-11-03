@@ -1,9 +1,7 @@
 <?php
+include_once 'config.ini';
 
-define("DBServer", "localhost");
-define("DBServerPW", "test");
-define("DBServerUser", "root");
-define("DBInternal", "playground");
+
 // Verbindung aufbauen, auswählen einer Datenbank
 $link = mysql_connect(DBServer, DBServerUser, DBServerPW)
     or die("Keine Verbindung moeglich: " . mysql_error());
