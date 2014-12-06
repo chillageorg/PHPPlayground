@@ -18,14 +18,14 @@ function foo($obj)
 }
 
 
-echo fnXOR();
+//echo fnXOR();
 
 function fnXOR()
 {
  return  (1 and 0) xor (1 and 1);
 } 
 //phpinfo();
-echo array_shift(explode("." ,(array_pop(explode("/", __FILE__)))));
+//echo array_shift(explode("." ,(array_pop(explode("/", __FILE__)))));
 $object = new MyClass();
 $object->setMember("bar");
 print $object->getMember();
