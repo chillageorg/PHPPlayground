@@ -58,12 +58,12 @@ echo "<pre>\n";
 
 $obj = new PropertyTest;
 
-$obj->a = 1;
-echo $obj->a . "\n\n";
+$obj->itsmagic = 'George';
+echo $obj->itsmagic . "\n\n";
 
-var_dump(isset($obj->a));
-unset($obj->a);
-var_dump(isset($obj->a));
+var_dump(isset($obj->itsmagic));
+unset($obj->itsmagic);
+var_dump(isset($obj->itsmagic));
 echo "\n";
 
 echo $obj->declared . "\n\n";
