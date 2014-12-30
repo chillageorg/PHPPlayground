@@ -1,6 +1,7 @@
 <?php
 // Cross Domain from Webstorm localhost
-header('Access-Control-Allow-Origin: http://localhost:63342');
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 include_once 'config.ini';
 $link = mysql_connect(DBServer, DBServerUser, DBServerPW)
 or die("Keine Verbindung moeglich: " . mysql_error());
