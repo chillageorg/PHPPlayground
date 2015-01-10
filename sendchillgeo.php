@@ -10,11 +10,11 @@ $messagetxt = mysql_real_escape_string($data->message);
 
 
 if($name && $vorname) {
-	$to = "chillageorg@hispeed.ch";
+	$to = "chillageorg@swissonline.ch";
 	$subject = "Formular von chillgeo.ch";
 
 	$header = 'From:'.$email . "\r\n" .
-    		'Reply-To: chillageorg@hispeed.ch' . "\r\n" .
+    		'Reply-To: chillageorg@swissonline.ch' . "\r\n" .
     		'X-Mailer: PHP/' . phpversion();
 
 	$message = "\n";
@@ -29,12 +29,13 @@ if($name && $vorname) {
 		echo "$message<br />";
 		echo "$header<br />";
 	} catch (Exception $e) {
-		echo "sentnosuccess";
+		echo "senterror";break;
 	}
 
 
 
 }
 else {
-	echo "senterror";
+	echo "senterror";break;
 }
+echo "sentok";
